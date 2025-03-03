@@ -26,7 +26,7 @@ function getAllFiles(path) {
             const nestedFiles = getAllFiles(fullPath);
             filesArray = filesArray.concat(nestedFiles);
         } else {
-            if (Path.extname(fullPath) == '.mdp') {
+            if (Path.extname(fullPath) == '.mde') {
                 filesArray.push(fullPath);
             }
         }
@@ -43,7 +43,7 @@ program
     .command("about")
     .description("See about info")
     .action(() => {
-        print("mdplus V. " + version);
+        print("mde V. " + version);
         print("By Calebh101");
     });
 
@@ -56,17 +56,17 @@ program
         const directory = isDirectory(path);
 
         let paths = [];
-        print("Starting \"mdplus compile\" on " + (directory ? "directory" : "file") + " " + path);
+        print("Starting \"mde compile\" on " + (directory ? "directory" : "file") + " " + path);
 
         if (directory) {
             paths = getAllFiles(path);
             if (paths.length <= 0) {
-                return error("Directory " + path + " does not contain any .mdp files");
+                return error("Directory " + path + " does not contain any .mde files");
             }
         } else {
             paths = [path];
-            if (Path.extname(path) !== '.mdp') {
-                return error("File " + path + " is not a .mdp file");
+            if (Path.extname(path) !== '.mde') {
+                return error("File " + path + " is not a .mde file");
             }
         }
 

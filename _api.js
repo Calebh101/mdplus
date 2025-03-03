@@ -1,9 +1,9 @@
 function print(input) {
-    console.log("mdplus: " + input);
+    console.log("mde: " + input);
 }
 
 function error(input) {
-    console.error("mdplus error: " + input);
+    console.error("mde error: " + input);
 }
 
 module.exports = {
